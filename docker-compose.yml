@@ -1,0 +1,16 @@
+version: "3.9"
+services:
+    nginx-proxy:
+        image: nginx:latest
+        ports:
+            - "80:80"
+            - "443:443"
+        volumes:
+            - ./nginx-proxy/www/config:/etc/nginx/conf.d
+            - ./nginx-proxy/www/html:/usr/share/nginx/html
+            ### SSL
+            - ./nginx-proxy/letsencrypt:/etc/letsencrypt
+            ### Cert auth
+            - ./nginx-proxy/cert_auth/ca.crt:/etc/ssl/ca.crt
+            ### Enable to add favicon
+            #- ./nginx-proxy/favicon.ico:/usr/share/nginx/html/favicon.ico
