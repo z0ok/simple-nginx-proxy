@@ -8,6 +8,7 @@ services:
         volumes:
             - ./nginx-proxy/www/config:/etc/nginx/conf.d
             - ./nginx-proxy/www/html:/usr/share/nginx/html
+            - ./nginx-proxy/base_nginx.conf:/etc/nginx/nginx.conf
             ### SSL
             - ./nginx-proxy/letsencrypt:/etc/letsencrypt
             ### Cert auth
