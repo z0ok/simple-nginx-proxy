@@ -62,6 +62,6 @@ subjectAltName = @alt_names
 
 
    print('\n\n[*] Step 4. New certs')
-   base_cmd_3 = f'openssl x509 -req -in {new_path}/{ssl_name}.{base_dn}.csr -CA ./home_ca/ca.crt -CAkey ./home_ca/ca.key -CAcreateserial -out {new_path}/{ssl_name}.{base_dn}.crt -days 3650 -sha256 -extfile {new_path}/{ssl_name}.{base_dn}.ext'
+   base_cmd_3 = f'openssl x509 -req -in {new_path}/{ssl_name}.{base_dn}.csr -CA ./myCA.pem -CAkey ./myCA.key -CAcreateserial -out {new_path}/{ssl_name}.{base_dn}.crt -days 3650 -sha256 -extfile {new_path}/{ssl_name}.{base_dn}.ext'
    print(base_cmd_3)
    os.system(base_cmd_3)
